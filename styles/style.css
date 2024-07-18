@@ -10,3 +10,9 @@ html{
     font-size: 18px;
     scroll-behavior: smooth;
 }
+
+.header, .main, .footer{
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
