@@ -1,0 +1,12 @@
+:root{
+    --index-size : calc(100vh/100);
+    --max-width : 1440px;
+    --header-height : 80px;
+    --font-family : 'Open Sans', sans-serif;
+}
+
+html{
+    font-family: var(--font-family);
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
