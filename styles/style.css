@@ -37,6 +37,7 @@ h6 {
     margin-bottom: var(--paragraph-button);
     text-align: center;
     width : 100%;
+    text-shadow: 1px 1px 1px var(--main-text-color-hover);
 }
 h3{
     font-size: 34px;
@@ -71,7 +72,6 @@ body {
     font-family: var(--font-family);
     font-size: var(--font-size);
     color: var(--main-color);
-    overflow-y: scroll;
 }
 
 /* header */
@@ -141,6 +141,9 @@ body {
     object-position: center;
     margin-bottom: var(--container-button)
 }
+.about p:last-of-type {
+    margin-bottom: 0;
+}
 /* slills */
 .skills {
     max-width: var(--max-width);
@@ -191,4 +194,19 @@ body {
     letter-spacing: 0.02em;
     text-align: center;
 }
+.list-skills div{
+    width :100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.list-skills div img{
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+    object-position: center;
+    filter: drop-shadow(1px 1px 1px var(--main-text-color-hover))
+}
+
 /* .about {} */
