@@ -1,21 +1,21 @@
 :root {
-    --index-size: calc(100vw/100);
     --max-width: 970px;
     --header-height: 80px;
     --font-family: 'Open Sans', sans-serif;
     --font-size: 18px;
 
     /* space */
-    --title-top: 50px;
+    --element-button: 50px;
     --title-button: 30px;
     --paragraph-button: 25px;
     --gap: 20px;
     --padding: 10px;
+    --container-button: 50px;
 
     /* color */
     --main-text-color: rgba(130, 130, 130, 1);
     --main-text-color-hover: rgba(7, 7, 7, 1);
-    --main-background-color: #fff;
+    --main-background-color: rgba(255, 255, 255, .8);
 
     /* other */
     --transition: all 0.3s ease;
@@ -25,6 +25,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* outline: 1px solid red; */
 }
 
 h1,
@@ -33,21 +34,44 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top: var(--title-top);
+    margin-bottom: var(--paragraph-button);
+    text-align: center;
+    width : 100%;
+}
+h3{
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 46.3px;  
+}
+h1{
+    text-align: start;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+}
+p {
+    max-width: 480px;
+    width :100%;
+    font-weight: 400px;
+    line-height: 24px;
+    max-width: 500px;
     margin-bottom: var(--paragraph-button);
     text-align: center;
 }
 
+
 body {
+    margin: 0;
+    padding: 0;
     position: relative;
-    width: 100vw;
+    /* wtf remember this */
+    max-width: 100vw;
     min-height: 100vh;
     background-color: var(--main-background-color);
     font-family: var(--font-family);
     font-size: var(--font-size);
     color: var(--main-color);
-    overflow: hidden;
-    scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 /* header */
@@ -64,15 +88,17 @@ body {
 
 .header nav {
     max-width: var(--max-width);
+    width: 100%;
     margin: 0 auto;
     height: 100%;
+    border-bottom: 1px solid var(--main-text-color);
 }
 
 .header ul {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     list-style: none;
     gap: var(--gap);
@@ -94,38 +120,75 @@ body {
 }
 
 .main {
-    max-width: var(--max-width);
-    min-height: 100vh;
-    margin: var(--header-height) auto 0;
-    padding: 0 var(--padding);
+    width: 100%;
+    padding-top: var(--header-height);
+    margin : 0 auto;
 }
 
 .about {
+    max-width: var(--max-width);
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: var(--container-button);
 }
-
-.about>h1{
-    text-align: start;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 65.37px;
-}
-
 .about img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: var(--container-button)
+}
+/* slills */
+.skills {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--container-button)
+}
+.list-skills{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    list-style: none;
+}
+.list-skills li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+    list-style: none;
+    width: 170px;
+    height: 230px;
 }
 
-.about p {
-    max-width: 480px;
-    font-weight: 400px;
-    line-height: 24px;
-    max-width: 500px;
-    margin-bottom: var(--paragraph-button);
+.list-skills figure{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    list-style: none;
+}
+
+.list-skills figcaption{
+    color: var(--main-text-color);
+    max-width: 90px;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19.07px;
+    letter-spacing: 0.02em;
     text-align: center;
 }
-
 /* .about {} */
