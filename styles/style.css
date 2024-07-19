@@ -1,117 +1,131 @@
-:root{
-    --index-size : calc(100vw/100);
-    --max-width : 1440px;
-    --header-height : 80px;
-    --font-family : 'Open Sans', sans-serif;
-    --padding : calc(var(--index-size) *1);
-    --gap: calc(var(--index-size)* 2);
-    --font-size  :18px;
+:root {
+    --index-size: calc(100vw/100);
+    --max-width: 970px;
+    --header-height: 80px;
+    --font-family: 'Open Sans', sans-serif;
+    --font-size: 18px;
+
+    /* space */
+    --title-top: 50px;
+    --title-button: 30px;
+    --paragraph-button: 25px;
+    --gap: 20px;
+    --padding: 10px;
+
     /* color */
-    --main-color : rgba(7, 7, 7, 1);
-    --main-color-hover : rgba(130 ,130, 130, 1);
-    --top: calc(var(--index-size) * 1.2);
-    --button: calc(var(--index-size) * 2);
+    --main-text-color: rgba(130, 130, 130, 1);
+    --main-text-color-hover: rgba(7, 7, 7, 1);
+    --main-background-color: #fff;
+
+    /* other */
+    --transition: all 0.3s ease;
 }
-*{
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: var(--title-top);
+    margin-bottom: var(--paragraph-button);
+    text-align: center;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--main-background-color);
     font-family: var(--font-family);
     font-size: var(--font-size);
-    color : var(--main-color);
+    color: var(--main-color);
+    overflow: hidden;
     scroll-behavior: smooth;
 }
-li{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-    white-space: nowrap;
-}
-h1, h2, h3, h4, h5, h6{
-    margin-top: var(--top);
-    margin-bottom: var(--button);
+
+/* header */
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--main-background-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
-.header, .main, .footer{
-    width: 100%;
+.header nav {
     max-width: var(--max-width);
     margin: 0 auto;
+    height: 100%;
 }
-/* header */
-.header{
-    height: var(--header-height);
-    display: flex;
-    justify-content: stretch;
-    align-items: center;
-    border-bottom: 1px solid var(--main-color-hover);
-}
-.header ul{
-    flex :1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: var(--gap);
-    padding-inline-start: 0;
-}
-.header ul li{
-    list-style: none;
-}
-.header ul li a{
-    font-size: var(--font-size);
-    font-weight: 400;
-    line-height: 24.51px;
-    letter-spacing: 0.02em;
-    color: var(--main-colol);
-}
-.header ul li a:hover{
-    color: var(--main-color-hover);
-}
-/* main */
-.main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/* about */
-.about{
-    display: flex;
-    flex-direction: column;
-}
-.about h1{
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 60px;
-}
-.about img{
+
+.header ul {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-.about h3{
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 46px;
-    letter-spacing: 0.02em;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: var(--gap);
 }
 
-.about p{
-    font-size: var(--font-size);
+.header a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    transition: var(--transition);
+    line-height: 24px;
+    letter-spacing: 2%;
     font-weight: 400;
-    line-height: 24.51px;
-    letter-spacing: 0.02em;
+    padding: var(--padding);
+    white-space: nowrap;
+}
+
+.header a:hover {
+    color: var(--main-text-color-hover);
+}
+
+.main {
+    max-width: var(--max-width);
+    min-height: 100vh;
+    margin: var(--header-height) auto 0;
+    padding: 0 var(--padding);
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about>h1{
+    text-align: start;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 65.37px;
+}
+
+.about img {
+    width: 100%;
+    height: 100%;
+}
+
+.about p {
+    max-width: 480px;
+    font-weight: 400px;
+    line-height: 24px;
+    max-width: 500px;
+    margin-bottom: var(--paragraph-button);
     text-align: center;
-
-}
-.about span{
-    display: block;
-    max-width: 480px; 
-    margin : 0 auto var(--top) auto;
 }
 
+/* .about {} */
